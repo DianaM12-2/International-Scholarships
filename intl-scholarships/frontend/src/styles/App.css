@@ -1,0 +1,83 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f7fa; color: #1a1a2e; }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, #1F4E79 0%, #2E74B5 60%, #5b9bd5 100%); color: white; padding: 48px 32px 40px; text-align: center; }
+.hero-content { max-width: 800px; margin: 0 auto; }
+.hero-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 16px; letter-spacing: 0.05em; }
+.hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 12px; }
+.hero-subtitle { font-size: 1.1rem; opacity: 0.9; margin-bottom: 28px; line-height: 1.6; }
+
+/* Stats */
+.stats-bar { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.stat-item { text-align: center; }
+.stat-icon { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+.stat-value { font-size: 1.8rem; font-weight: 700; display: block; }
+.stat-label { font-size: 0.78rem; opacity: 0.85; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* Layout */
+.main { max-width: 1200px; margin: 0 auto; padding: 32px 24px; display: grid; grid-template-columns: 260px 1fr; gap: 28px; }
+@media (max-width: 768px) { .main { grid-template-columns: 1fr; } }
+
+/* Sidebar */
+.search-bar { position: relative; margin-bottom: 16px; }
+.search-bar input { width: 100%; padding: 10px 36px 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; background: white; }
+.search-bar input:focus { outline: none; border-color: #2E74B5; }
+.search-clear { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #999; font-size: 0.9rem; }
+
+.filter-panel { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+.filter-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.filter-header h3 { font-size: 1rem; font-weight: 600; }
+.btn-text { background: none; border: none; color: #2E74B5; cursor: pointer; font-size: 0.85rem; }
+.filter-group { margin-bottom: 16px; }
+.filter-group label { display: block; font-size: 0.82rem; font-weight: 500; color: #555; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+.filter-group select { width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.88rem; background: white; }
+
+/* Results */
+.results-header { margin-bottom: 20px; }
+.results-header h2 { font-size: 1.1rem; color: #555; font-weight: 500; }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+
+/* Card */
+.card { background: white; border-radius: 12px; padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; border: 1px solid transparent; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-color: #2E74B5; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.card-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+.badge { padding: 3px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; }
+.badge-opt { background: #d5f5e3; color: #1a7a4a; }
+.badge-renewable { background: #d6eaf8; color: #1a5276; }
+.card-amount { font-size: 0.95rem; font-weight: 700; color: #1F4E79; white-space: nowrap; }
+.card-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; line-height: 1.4; }
+.card-provider { font-size: 0.85rem; color: #888; margin-bottom: 10px; }
+.card-desc { font-size: 0.85rem; color: #555; line-height: 1.6; margin-bottom: 14px; }
+.card-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.meta-item { background: #f8f9fa; padding: 6px 10px; border-radius: 6px; }
+.meta-label { display: block; font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.04em; }
+.meta-value { font-size: 0.82rem; font-weight: 500; color: #333; }
+.card-visas { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.visa-tag { background: #eef2ff; color: #3730a3; padding: 3px 8px; border-radius: 12px; font-size: 0.75rem; }
+.card-cta { width: 100%; padding: 8px; background: #1F4E79; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 0.88rem; font-weight: 500; }
+.card-cta:hover { background: #2E74B5; }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+.modal { background: white; border-radius: 16px; padding: 32px; max-width: 600px; width: 100%; max-height: 85vh; overflow-y: auto; position: relative; }
+.modal-close { position: absolute; top: 16px; right: 16px; background: #f0f0f0; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-size: 1rem; }
+.modal h2 { font-size: 1.4rem; margin-bottom: 4px; padding-right: 40px; }
+.modal-provider { color: #888; margin-bottom: 12px; }
+.modal-amount { font-size: 1.4rem; font-weight: 700; color: #1F4E79; margin-bottom: 16px; }
+.modal-desc { font-size: 0.95rem; line-height: 1.7; color: #444; margin-bottom: 20px; }
+.modal-details { display: grid; gap: 8px; margin-bottom: 20px; }
+.modal-details div { font-size: 0.9rem; color: #555; }
+.modal-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.tag { background: #f0f2f5; padding: 4px 10px; border-radius: 12px; font-size: 0.78rem; color: #555; }
+.btn-apply { display: block; text-align: center; background: #1F4E79; color: white; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 1rem; }
+.btn-apply:hover { background: #2E74B5; }
+
+/* States */
+.loading { display: flex; flex-direction: column; align-items: center; padding: 80px; gap: 16px; color: #888; }
+.spinner { width: 36px; height: 36px; border: 3px solid #ddd; border-top-color: #1F4E79; border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.error-msg { text-align: center; padding: 60px; color: #e74c3c; }
+.empty { text-align: center; padding: 60px; color: #888; }
+.btn-reset { margin-top: 12px; padding: 8px 20px; background: #1F4E79; color: white; border: none; border-radius: 8px; cursor: pointer; }
